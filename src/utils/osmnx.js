@@ -30,7 +30,7 @@ const calcPath = (start_loc, end_loc) => {
     // response handling
     pyScript.stdout.on("data", (data) => {
       result += data.toString();
-      console.log(result);
+      console.log("result from pyScript",result);
     });
 
     // error handling
@@ -41,8 +41,7 @@ const calcPath = (start_loc, end_loc) => {
     // triggered while closing
     pyScript.on("close", (code) => {
       if (code === 0) {
-        const finalRes = JSON.stringify(result);
-        resolve(JSON.parse(finalRes));
+        resolve(JSON.parse(result));
       } else {
         reject("pyScript execution failed");
       }

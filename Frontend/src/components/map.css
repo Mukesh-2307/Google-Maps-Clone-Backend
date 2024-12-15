@@ -1,0 +1,22 @@
+#map { height: 180px; }
+
+.mapItem{
+    color: white
+}
+
+.leafletContainer{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+}
+
+@media screen and (max-width: 425px) {
+    h1{
+        text-align: center;
+    }
+    .mapHeader{
+        font-size: x-large;
+    }
+}

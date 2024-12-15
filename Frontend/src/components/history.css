@@ -1,0 +1,25 @@
+.hist-clr-btn{
+    width: 70%;
+}
+
+.histList{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.histItem{
+    font-size: larger;
+}
+
+@media screen and (max-width: 1300px) {
+    .histItem{
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .histItem{
+        font-size: medium;
+    }
+}

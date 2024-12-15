@@ -3,6 +3,7 @@ import { apiErrorHandler } from "../utils/apiErrorHandler.js";
 
 // import the osmnx util
 import { calcPath } from "../utils/osmnx.js";
+import { apiResponseHandler } from "../utils/apiResponseHandler.js";
 
 const getSmallestPath = asyncHandler(async (req, res) => {
   // res.json({user: "geek"})
@@ -19,7 +20,13 @@ const getSmallestPath = asyncHandler(async (req, res) => {
     const shortestRoute = await calcPath(start_loc, end_loc); //compute the osmnx util here
     return res
       .status(200)
-      .json(200, { shortestRoute }, "py script execution successfull");
+      .json(
+        new apiResponseHandler(
+          200,
+          shortestRoute,
+          "py script execution successfull"
+        )
+      );
   } catch (error) {
     console.log(error);
     throw new apiErrorHandler(500, "py script execution unsuccessfull");

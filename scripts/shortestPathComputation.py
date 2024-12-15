@@ -15,13 +15,13 @@ def compute_shortest_path(data):
 
     # setting the received origin and destination values
     origin = data["start_loc"]
-    print("origin (lat,long) :", origin[1],origin[0])
+    # print("origin (lat,long) :", origin[1],origin[0])
     destination = data["end_loc"]
-    print("destination (lat,long) :", destination[1],destination[0])
+    # print("destination (lat,long) :", destination[1],destination[0])
 
     # finding all the available path between start and end location
     graph = ox.graph_from_place("Bengaluru, India", network_type="drive")
-    print("graph before project",graph)
+    # print("graph before project",graph)
 
     # finding the shortest path out of all the available path
     path = ox.shortest_path(
@@ -30,9 +30,13 @@ def compute_shortest_path(data):
         ox.distance.nearest_nodes(graph, destination[1], destination[0]),
         weight="length"
     )
+
+    # converting path IDs into coordinates
+    path_coordinates = [(graph.nodes[node]['y'], graph.nodes[node]['x']) for node in path]
+    # print(path_coordinates)
     
     # returning the shortest path
-    return {"path": path}
+    return {"path": path_coordinates}
 
 # validating coordinates
 def is_valid_coordinate(coord):

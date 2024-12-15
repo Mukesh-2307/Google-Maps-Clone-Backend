@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.super {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    padding: 1.75rem;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+}
+
+h1,
+p {
+    color: white
+}
+
+.input-group {
+    /* border: solid white .5px; */
+    width: 45rem;
+    padding: .75rem;
+    gap: .25rem
+}
+
+
+.mapAndHistSection {
+    height: 75vh;
+    width: 100%;
+
+    padding: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mapSection {
+    width: 60%;
+    height: 100%;
+    padding: 1rem;
+    border: solid white .5px;
+}
+
+.histSection {
+    width: 40%;
+    height: 100%;
+    padding: 1rem;
+    border: solid white .5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+}
+
+.histList {
+    list-style: none;
+}
+
+.histItem {
+    color: white;
+}
+
+@media screen and (max-width: 720px) {
+    .mapAndHistSection{
+        flex-direction: column;
+    }
+
+    .mapSection{
+        width: 100%;
+    }
+    .histSection{
+        width: 100%;
+    }
+
+    .input-group {
+        width: 100%;
+    }
+}
