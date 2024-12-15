@@ -1,15 +1,16 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "src/routes/*.js",
-            "use": "@vercel/node"
-        }
+      {
+        "src": "src/routes/calcAndSearch.routes.js",
+        "use": "@vercel/node"
+      }
     ],
     "routes": [
-        {
-            "src": "/api/(.*)",
-            "dest": "src/routes/$1.js"
-        }
+      {
+        "src": "/api/v1/calcAndSearch/(.*)",
+        "dest": "src/routes/calcAndSearch.routes.js"
+      }
     ]
-}
+  }
+  
