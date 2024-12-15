@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon --ignore 'scripts/*.py' --ignore '*.log' --ignore '*.graphml' src/index.js"
   },
   "keywords": [
     "Google",

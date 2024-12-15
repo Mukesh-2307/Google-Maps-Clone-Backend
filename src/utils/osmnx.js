@@ -1,52 +1,52 @@
 import { spawn } from "child_process";
+// import path from "path";
+import fs from "fs";
 
 const calcPath = (start_loc, end_loc) => {
   return new Promise((resolve, reject) => {
-    const pyScript = spawn('python', ['../../scripts/shortestPathComputation.py', 'mukesh']);
+    const absolutePath =
+      "C:/Users/admin/Desktop/Google Map Clone/scripts/shortestPathComputation.py";
+    // console.log(absolutePath);
+
+    // Path validation
+    if (fs.existsSync(absolutePath)) {
+      console.log("file found");
+    } else {
+      console.log("file not found");
+    }
+
+    // triggering the .py script
+    const pyScript = spawn("python", [absolutePath]);
 
     const data = JSON.stringify({ start_loc, end_loc });
-    console.log(data);
+    // console.log(data);
 
-    // pyScript.stdin.write(data);
-    // pyScript.stdin.end();
+    // providing the received data {from req.body} to pyScript
+    pyScript.stdin.write(data);
+    pyScript.stdin.end();
 
-    // let result = '';
+    let result = "";
 
+    // response handling
     pyScript.stdout.on("data", (data) => {
-      console.log(`output : ${data}`);
+      result += data.toString();
+      console.log(result);
     });
 
-    pyScript.stderr.on("data", (data) => {
-      console.log(`output : ${data}`);
+    // error handling
+    pyScript.stderr.on("data", (err) => {
+      reject(`pyScript error: ${err}`);
     });
 
+    // triggered while closing
     pyScript.on("close", (code) => {
       if (code === 0) {
-        resolve(JSON.parse("everything is fine"));
+        const finalRes = JSON.stringify(result);
+        resolve(JSON.parse(finalRes));
       } else {
         reject("pyScript execution failed");
       }
     });
-
-    console.log("fine till here");
-
-    // pyScript.stdout.on('data',(data)=>{
-    //     result += data.toString();
-    //     console.log(result);
-    // })
-
-    // pyScript.stderr.on('data', (err)=>{
-    //     reject(`pyScript error: ${err}`);
-    // })
-
-    // pyScript.on('close', (code) =>{
-    //     if(code === 0){
-    //         resolve(JSON.parse(result));
-    //     }
-    //     else{
-    //         reject('pyScript execution failed')
-    //     }
-    // })
   });
 };
 

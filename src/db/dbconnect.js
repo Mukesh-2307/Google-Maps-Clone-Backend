@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-// ********** current version **********
+// ********** my current version **********
 const DbConnection = async () => {
   try {
     const response = await mongoose.connect(`${process.env.MONGODB_URI}`);
@@ -11,7 +11,7 @@ const DbConnection = async () => {
   }
 };
 
-// ********** previous version **********
+// ********** my old version **********
 // async function DbConnection() {
 //     const DB_URL = process.env.MONGODB_URI;
 //     await mongoose.connect(DB_URL)

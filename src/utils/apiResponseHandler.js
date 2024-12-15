@@ -1,3 +1,5 @@
+// this is a utility for sending responses in a more structured manner
+
 class apiResponseHandler{
     constructor(
         statusCode,

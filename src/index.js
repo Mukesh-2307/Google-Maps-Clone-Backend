@@ -3,8 +3,10 @@ import DbConnection from "./db/dbconnect.js";
 import { app } from "./app.js";
 dotenv.config();
 
+// retriving port id from .env file
 const port = process.env.PORT;
 
+// MONGOdb connection
 DbConnection()
   .then(() => {
     app.listen(port, () => {

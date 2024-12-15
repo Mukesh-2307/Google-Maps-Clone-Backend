@@ -1,3 +1,5 @@
+// schema for storing search history
+
 import mongoose from "mongoose";
 
 const searchHistorySchema = new mongoose.Schema(

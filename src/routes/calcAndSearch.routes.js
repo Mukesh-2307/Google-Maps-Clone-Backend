@@ -6,6 +6,7 @@ import {
 } from "../controllers/searchHistory.controller.js";
 
 const router = Router();
+// routes
 router.route("/calculatePath").post(getSmallestPath);
 router.route("/getSearchHistory").get(getLocSearched);
 router.route("/saveSearchHistory").post(saveLocSearched);
