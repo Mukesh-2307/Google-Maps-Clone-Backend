@@ -1,0 +1,10 @@
+.footSuper{
+    background-color: #2B3035;
+    margin: 0;
+    padding: 1rem;
+}
+
+.footSuper p{
+    margin-bottom: 0;
+    text-align: center;
+}
