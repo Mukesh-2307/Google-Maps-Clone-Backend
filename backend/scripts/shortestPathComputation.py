@@ -9,6 +9,7 @@ import osmnx as ox
 
 def compute_shortest_path(data):
 
+    print("entered python script function")
     # input data validation
     if "start_loc" not in data or "end_loc" not in data:
         raise ValueError("Input data must contain 'start_loc' and 'end_loc'")
@@ -36,6 +37,7 @@ def compute_shortest_path(data):
     # print(path_coordinates)
     
     # returning the shortest path
+    print("completed exectuion now exiting")
     return {"path": path_coordinates}
 
 # validating coordinates
@@ -44,6 +46,7 @@ def is_valid_coordinate(coord):
 
 if __name__ == "__main__":
     try:
+        print("entered python script")
         # reading inputs and assigning to pass further
         input_data = sys.stdin.read()
         # print("value in input_data : ",input_data)
