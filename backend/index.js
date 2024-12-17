@@ -9,7 +9,7 @@ const port = process.env.PORT;
 // MONGOdb connection
 DbConnection()
   .then(() => {
-    app.listen(port, (req,res) => {
+    app.listen(port, () => {
       console.log(`App listening on port ${port}`);
     });
   })
