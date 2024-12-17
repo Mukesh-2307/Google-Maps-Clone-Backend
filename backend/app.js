@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //  Routes imports
-import calcAndSearchRouter from "./routes/calcAndSearch.routes.js";
+import calcAndSearchRouter from "./src/routes/calcAndSearch.routes.js";
 
 // Routes declaration
 app.use("/api/v1/calcAndSearch", calcAndSearchRouter);

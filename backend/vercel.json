@@ -8,12 +8,8 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/src/routes/calcAndSearch.routes.js"
-    },
-    {
       "src": "/api/v1/calcAndSearch/(.*)",
-      "dest": "src/routes/calcAndSearch.routes.js"
+      "dest": "/backend/src/routes/calcAndSearch.routes.js"
     }
   ]
 }

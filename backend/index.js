@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import DbConnection from "./db/dbconnect.js";
+import DbConnection from "./src/db/dbconnect.js";
 import { app } from "./app.js";
 dotenv.config();
 
@@ -9,7 +9,7 @@ const port = process.env.PORT;
 // MONGOdb connection
 DbConnection()
   .then(() => {
-    app.listen(port, () => {
+    app.listen(port, (req,res) => {
       console.log(`App listening on port ${port}`);
     });
   })

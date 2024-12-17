@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --ignore 'scripts/*.py' --ignore '*.log' --ignore '*.graphml' src/index.js",
-    "start": "nodemon src/index.js"
+    "dev": "nodemon --ignore 'scripts/*.py' --ignore '*.log' --ignore '*.graphml' index.js",
+    "start": "nodemon index.js"
   },
   "keywords": [
     "Google",

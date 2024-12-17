@@ -1,10 +1,16 @@
-import { Router } from "express";
+import express,{ Router } from "express";
 import { getSmallestPath } from "../controllers/computation.controller.js";
 import {
   getLocSearched,
   saveLocSearched,
   deleteLocSearched
 } from "../controllers/searchHistory.controller.js";
+
+const app = express()
+
+app.get("/",(req,res)=>{
+  res.send("hello from vercel.");
+})
 
 const router = Router();
 // routes
