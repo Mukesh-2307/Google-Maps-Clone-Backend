@@ -16,7 +16,7 @@ const Home = () => {
 
     // sends start and end location coordinates and receives shortest path coordinates as output
     const response = await axios.post(
-      "http://localhost:3000/api/v1/calcAndSearch/calculatePath",
+      "https://google-maps-clone-backend.onrender.com/api/v1/calcAndSearch/calculatePath",
       { start_loc: sLoc, end_loc: eLoc }
     );
     // console.log(response.data.data.path);
@@ -24,7 +24,7 @@ const Home = () => {
 
     // updates the database with newly searched location
     const searchHistoryResponse = await axios.post(
-      "http://localhost:3000/api/v1/calcAndSearch/saveSearchHistory",
+      "https://google-maps-clone-backend.onrender.com/api/v1/calcAndSearch/saveSearchHistory",
       {
         start_loc: sLoc,
         end_loc: eLoc,

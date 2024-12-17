@@ -8,7 +8,7 @@ const History = () => {
   useEffect(() => {
     const getHistory = async () => {
       const response = await axios.get(
-        "http://localhost:3000/api/v1/calcAndSearch/getSearchHistory"
+        "https://google-maps-clone-backend.onrender.com/api/v1/calcAndSearch/getSearchHistory"
       );
       // console.log(response.data.data);
       setHistoryList(response.data.data);
@@ -22,7 +22,7 @@ const History = () => {
   // delete the search history
   const handleOnclick = async () => {
     const response = await axios.delete(
-      "http://localhost:3000/api/v1/calcAndSearch/deleteSearchHistory"
+      "https://google-maps-clone-backend.onrender.com/api/v1/calcAndSearch/deleteSearchHistory"
     );
   };
 
