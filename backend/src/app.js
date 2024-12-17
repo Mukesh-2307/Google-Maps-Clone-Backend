@@ -22,6 +22,10 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use("/", (req, res) => {
+  res.send("server is running");
+});
+
 //  Routes imports
 import calcAndSearchRouter from "./routes/calcAndSearch.routes.js";
 
