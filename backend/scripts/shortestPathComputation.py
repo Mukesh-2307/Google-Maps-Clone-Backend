@@ -2,7 +2,7 @@
 import sys
 import json
 import osmnx as ox
-import sklearn
+# import sklearn
 
 # print (sklearn.__version__)
 # print ("hello ",str(sys.argv[1]))
