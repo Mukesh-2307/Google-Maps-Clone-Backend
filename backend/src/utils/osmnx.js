@@ -7,10 +7,10 @@ const calcPath = (start_loc, end_loc) => {
     // const absolutePath = "C:/Users/admin/Desktop/Google Map Clone/backend/scripts/shortestPathComputation.py";
 
     const __dirname = path.dirname(new URL(import.meta.url).pathname);
-    console.log(__dirname)
+    // console.log(__dirname)
 
     const absolutePath = path.join(__dirname,"../../scripts/shortestPathComputation.py")
-    console.log("resolved path:",absolutePath);
+    // console.log("resolved path:",absolutePath);
 
     // Path validation
     if (fs.existsSync(absolutePath)) {
