@@ -29,9 +29,6 @@ import calcAndSearchRouter from "./src/routes/calcAndSearch.routes.js";
 app.use("/api/v1/calcAndSearch", calcAndSearchRouter);
 
 // demo routes
-app.get("/hero", (req, res) => {
-  res.send("hello hero!");
-});
 
 app.get("/", (req, res) => {
   res.send("hello home!");
