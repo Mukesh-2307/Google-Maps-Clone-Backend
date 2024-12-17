@@ -10,6 +10,10 @@
     {
       "src": "/(.*)",
       "dest": "/backend/app.js"
+    },
+    {
+      "src": "/hero(.*)",
+      "dest": "/backend/app.js"
     }
   ]
 }
