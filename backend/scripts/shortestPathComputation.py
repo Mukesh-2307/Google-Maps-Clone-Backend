@@ -93,4 +93,5 @@
 # test code
 import sys
 print("py script executed successfully")
+result = "you get shortest path"
 sys.exit(0)
