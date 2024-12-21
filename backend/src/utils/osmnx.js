@@ -1,7 +1,7 @@
 import { spawn } from "child_process";
 import path from "path";
 import fs from "fs";
-import apiErrorHandler from "./apiErrorHandler.js";
+import {apiErrorHandler} from "./apiErrorHandler.js"
 
 const calcPath = (start_loc, end_loc) => {
   return new Promise((resolve, reject) => {
