@@ -50,7 +50,7 @@ const calcPath = (start_loc, end_loc) => {
       // response handling
       pyScript.stdout.on("data", (data) => {
         result += data.toString();
-        console.log("result from pyScript (stdout)", data.toString());
+        console.log("result from pyScript (stdout)", result);
       });
 
       // error handling

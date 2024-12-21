@@ -92,6 +92,7 @@
 
 # test code
 import sys
-print("py script executed successfully")
-result = "you get shortest path"
+import json
+result = {"message":"you get shortest path"}
+print(json.dumps(result))
 sys.exit(0)
