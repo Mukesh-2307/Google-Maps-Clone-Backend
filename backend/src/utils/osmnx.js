@@ -50,11 +50,12 @@ const calcPath = (start_loc, end_loc) => {
       // response handling
       pyScript.stdout.on("data", (data) => {
         result += data.toString();
-        console.log("result from pyScript", result);
+        console.log("result from pyScript (stdout)", data.toString());
       });
 
       // error handling
       pyScript.stderr.on("data", (err) => {
+        console.log("pyScript stdErr",err.toString())
         reject(`pyScript error: ${err}`);
       });
 
