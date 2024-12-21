@@ -67,7 +67,7 @@ const calcPath = (start_loc, end_loc) => {
           } catch (error) {
             throw new apiErrorHandler(
               400,
-              `Error parsing Python script output: ${error.message}`
+              `Error parsing Python script output: ${JSON.parse(error.message)}`
             );
           }
         } else {
