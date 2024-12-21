@@ -75,6 +75,7 @@ const calcPath = (start_loc, end_loc) => {
       });
 
       pyScript.on("error", (err) => {
+        console.error("failed to start the pyScript:",err)
         reject(new Error(`Failed to start Python script: ${err.message}`));
       });
     } catch (error) {
